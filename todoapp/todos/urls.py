@@ -9,5 +9,7 @@ urlpatterns = [
     path('update/<int:pk>/', views.update_todo, name='update_todo'),
     path('delete/<int:pk>/', views.delete_todo, name='delete_todo'),
     path('toggle/todo/<int:todo_id>/', views.toggle_todo, name='toggle_todo'),
-     path('', views.list_todos, name='list_todos'),
+    path('', views.list_todos, name='list_todos'),
+    
+    
 ]

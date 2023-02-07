@@ -19,15 +19,19 @@
       <div class="mb-4">
         <input type="text" name="task" value="{{ todo.task }}" class="border border-gray-400 p-2 w-full">
       </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2">Priority</label>
+        <select name="priority" class="border border-gray-400 p-2 w-full">
+          <option value="Low" {% if todo.priority == 'low' %} selected {% endif %}>Low</option>
+          <option value="Medium" {% if todo.priority == 'medium' %} selected {% endif %}>Medium</option>
+          <option value="High" {% if todo.priority == 'high' %} selected {% endif %}>High</option>
+        </select>
+      </div>
       <div class="mb-4 text-center">
         <input type="submit" value="Update" class="bg-blue-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent  hover:bg-blue">
         <a href="{% url 'todos:index' %}" class="bg-green-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent  hover:bg-green">Back</a>
       </div>
-        
-      
     </form>
   </div>
 </body>
 </html>
-
-

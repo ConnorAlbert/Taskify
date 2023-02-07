@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Todo
-from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
 
 app_name = 'todos'
@@ -13,7 +12,8 @@ def index(request):
 def add_todo(request):
     if request.method == 'POST':
         task = request.POST['task']
-        Todo.objects.create(task=task)
+        priority = request.POST.get('priority', 'low')
+        Todo.objects.create(task=task, priority=priority)
         return redirect('index')
     return render(request, 'todos/add_todo.html')
 
@@ -24,14 +24,19 @@ def delete_todo(request, pk):
 
 def update_todo(request, pk):
     todo = Todo.objects.get(id=pk)
-    
+
     if request.method == 'POST':
         todo.task = request.POST['task']
         todo.completed = request.POST.get('completed', False) == "on"
+        todo.priority = request.POST['priority']
         todo.save()
         return redirect('todos:index')
-    
-    return render(request, 'todos/update_todo.html', {'todo': todo})
+
+    context = {
+        'todo': todo,
+        'PRIORITY_CHOICES': Todo.PRIORITY_CHOICES,
+    }
+    return render(request, 'todos/update_todo.html', context)
 
 def toggle_todo(request, todo_id):
     todo = get_object_or_404(Todo, pk=todo_id)
