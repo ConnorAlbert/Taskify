@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Todo
 from django.shortcuts import get_object_or_404, redirect
 
+
 app_name = 'todos'
 
 def index(request):
@@ -42,9 +43,5 @@ def toggle_todo(request, todo_id):
     todo = get_object_or_404(Todo, pk=todo_id)
     todo.completed = not todo.completed
     todo.save()
-    return redirect('todos:list_todos')
+    return redirect('todos:index')
 
-def list_todos(request):
-    todos = Todo.objects.all()
-    context = {'todos': todos}
-    return render(request, 'todos/list_todos.html', context)
