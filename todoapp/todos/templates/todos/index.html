@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Todo App</title>
+</head>
+
+<body class="p-4">
+  <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <span class="font-semibold text-xl tracking-tight">Todo App</span>
+    </div>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm mr-4">
+        <form action="{% url 'todos:add_todo' %}" method="post" class="flex items-center w-full">
+          {% csrf_token %}
+          <input type="text" name="task" class="border border-gray-400 p-2  w-3/4">
+          <input type="submit" value="Add Todo"
+            class="bg-blue-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0  ml-4">
+        </form>
+      </div>
+    </div>
+
+    </div>
+    </div>
+  </nav>
+  <div class="container mx-auto mt-10 mr-1">
+    <table class="table-auto w-9/12 mt-4">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Task</th>
+          <th class="px-4 py-2">Completed</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %}
+        <tr>
+          <td class="border px-4 py-2 w-4/12 {%if todo.completed %}text-decoration: line-through{% endif %}">{{ todo.task }}</td>
+          <td class="border px-4 py-2 w-1/12 text-center">
+            <input type="checkbox" class="form-checkbox" {% if todo.completed %}checked{% endif %}
+              onclick="window.location='{% url 'todos:toggle_todo' todo.id %}'">
+          </td>
+          <td class="border px-4 py-2 w-1/12 text-center">
+            <a href="{% url 'todos:update_todo' todo.id %}"
+class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+             Edit
+            </a>
+            <span class="px-1"></span>
+            <a href="{% url 'todos:delete_todo' todo.id %}"
+class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+Delete
+</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</body>
+
+</html>
