@@ -29,7 +29,7 @@
           {% csrf_token %}
           {{ form.task }}
           {{ form.priority }}
-          <input type="submit" value="Add Todo" class="bg-blue-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 ml-4">
+          <input type="submit" value="Add Task" class="bg-blue-500 text-white p-2 rounded border-1 text-sm border-white  hover:text-white-700 hover:bg-blue-700 mt-4 lg:mt-0 ml-4">
         </form>
       </div>
     </div>
@@ -38,7 +38,8 @@
       form input[type="text"], form select {
         height: 30px;
         font-size: 15px;
-        padding: 5px 10px;
+        padding: 5px 15px;
+        border: 1px solid #ccc;
       }
     </style>
 
@@ -64,14 +65,14 @@
             <input type="checkbox" class="form-checkbox" {% if todo.completed %}checked{% endif %}
               onclick="window.location='{% url 'todos:toggle_todo' todo.id %}'">
           </td>
-          <td class="border px-4 py-2 w-1/12 text-center">
+          <td class="border px-4 pt-3 pb-3 py-2 w-1/12 text-center">
             <a href="{% url 'todos:update_todo' todo.id %}"
-      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
              Edit
             </a>
             <span class="px-1"></span>
             <a href="{% url 'todos:delete_todo' todo.id %}"
-      class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
       Delete
       </a>
           </td>
