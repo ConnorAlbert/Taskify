@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <title>Todo App</title>
 </head>
+
 <body class="p-4">
   <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-4">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -20,21 +22,22 @@
         <label class="block text-gray-700 font-medium mb-2">Update Task</label>
         <input type="text" name="task" value="{{ todo.task }}" class="border border-gray-400 p-2 w-full">
         <label class="block text-gray-700 font-medium mb-2">Priority</label>
-        <select name="priority" class="border border-gray-400 p-2 w-4/12">
-          <option value="Low" {% if todo.priority == 'low' %} selected {% endif %}>Low</option>
-          <option value="Medium" {% if todo.priority == 'medium' %} selected {% endif %}>Medium</option>
-          <option value="High" {% if todo.priority == 'high' %} selected {% endif %}>High</option>
-        </select>
-      </div>
-      <div class="mb-4 w-2/12 mx-auto">
-        
-        
+        <select name="priority" class="border border-gray-400 p-2 pr-0 w-4/12">
+          <option value="Low" {% if todo.priority == 'Low' %} selected {% endif %}>Low</option>
+          <option value="Medium" {% if todo.priority == 'Medium' %} selected {% endif %}>Medium</option>
+          <option value="High" {% if todo.priority == 'High' %} selected {% endif %}>High</option>
+        </select </div> <div class="mb-4 w-2/12 mx-auto">
+
+
       </div>
       <div class="mb-4 text-center">
-        <input type="submit" value="Update" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-        <a href="{% url 'todos:index' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back</a>
+        <input type="submit" value="Update"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <a href="{% url 'todos:index' %}"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back</a>
       </div>
     </form>
   </div>
 </body>
+
 </html>
