@@ -10,13 +10,13 @@
 
 
 <body class="p-4">
-  <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+  <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-3">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <span class="font-semibold text-xl tracking-tight">Todo App</span>
+      <span class="font-semibold text-xl tracking-tight mr-1 pr-44">To-do App</span>
     </div>
     <div class="block lg:hidden">
       <button
-        class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        class="fixed w-full flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Menu</title>
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -25,36 +25,39 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm mr-4">
-        <form action="{% url 'todos:add_todo' %}" method="post" class="flex items-center w-full">
+        <form action="{% url 'todos:index' %}" method="post" class="flex items-center w-full">
           {% csrf_token %}
-          <input type="text" name="task" class="border border-gray-400 p-2 w-3/4">
-          <select name="priority" class="border border-gray-400 p-2 w-1/4">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-          <input type="submit" value="Add Todo"
-            class="bg-blue-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 ml-4">
+          {{ form.task }}
+          {{ form.priority }}
+          <input type="submit" value="Add Todo" class="bg-blue-500 text-white p-2 rounded border-2 text-sm border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 ml-4">
         </form>
       </div>
     </div>
+    
+    <style>
+      form input[type="text"], form select {
+        height: 30px;
+        font-size: 15px;
+        padding: 5px 10px;
+      }
+    </style>
 
     </div>
     </div>
   </nav>
   <div class="container mx-auto mt-10 mr-1">
-    <table class="table-auto w-9/12 mt-4">
-      <thead>
+    <table class="table-auto w-9/12 mt-4 border border-gray-400">
+      <thead class="bg-gray-200">
         <tr>
-          <th class="px-4 py-2">Task</th>
-          <th class="px-4 py-2">Priority</th>
-          <th class="px-4 py-2">Completed</th>
-          <th class="px-4 py-2">Actions</th>
+          <th class="px-4 py-2 border border-gray-300">Task</th>
+          <th class="px-4 py-2 border border-gray-300">Priority</th>
+          <th class="px-4 py-2 border border-gray-300">Completed</th>
+          <th class="px-4 py-2 border border-gray-300">Actions</th>
         </tr>
       </thead>
       <tbody>
         {% for todo in todos %}
-        <tr>
+        <tr class="{% cycle 'bg-white' 'bg-gray-100' %}">
           <td class="border px-4 py-2 w-1/12 {%if todo.completed %}text-decoration: line-through{% endif %}">{{ todo.task }}</td>
           <td class="border px-4 py-2 w-1/12 text-center">{{ todo.priority }}</td>
           <td class="border px-4 py-2 w-1/12 text-center">

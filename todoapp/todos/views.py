@@ -1,22 +1,22 @@
 from django.shortcuts import render, redirect
 from .models import Todo
 from django.shortcuts import get_object_or_404, redirect
+from .forms import TodoForm
 
 
 app_name = 'todos'
 
 def index(request):
-    todos = Todo.objects.all()
-    context = {'todos': todos}
-    return render(request, 'todos/index.html', context)
-
-def add_todo(request):
     if request.method == 'POST':
-        task = request.POST['task']
-        priority = request.POST.get('priority', 'low')
-        Todo.objects.create(task=task, priority=priority)
-        return redirect('index')
-    return render(request, 'todos/add_todo.html')
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('todos:index')
+    else:
+        form = TodoForm()
+    todos = Todo.objects.all()
+    context = {'form': form, 'todos': todos} 
+    return render(request, 'todos/index.html', context)
 
 def delete_todo(request, pk):
     todo = get_object_or_404(Todo, id=pk)
