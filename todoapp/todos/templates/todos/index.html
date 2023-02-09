@@ -12,7 +12,7 @@
 <body class="p-4">
   <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-3">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <span class="font-semibold text-xl tracking-tight mr-11 pr-44">To-do App</span>
+      <span class="font-semibold text-xl tracking-tight pr-44">To-do App</span>
     </div>
     <div class="block lg:hidden">
       <button
@@ -70,6 +70,7 @@
       <tbody>
         {% for todo in todos %}
         <tr class="{% cycle 'bg-white' 'bg-gray-100' %}">
+          
           <td class="border px-4 py-2 w-1/12 {%if todo.completed %}text-decoration: line-through{% endif %}">{{ todo.task }}</td>
           <td class="border px-4 py-2 w-1/12 text-center priority-{{ todo.priority }}">{{ todo.priority }}</td>
           <td class="border px-4 py-2 w-1/12 text-center">
@@ -86,6 +87,7 @@
             class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
              Delete
             </a>
+            
           </td>
         </tr>
         {% endfor %}
