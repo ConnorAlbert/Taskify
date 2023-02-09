@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Install dependencies
+pip install django
+
+# Set environment variables
+export DJANGO_SETTINGS_MODULE=myproject.settings
+export DATABASE_URL=$(heroku config:get DATABASE_URL)
+
+# Prepare database
+python manage.py migrate
+
+# Start Django server
+python manage.py runserver
