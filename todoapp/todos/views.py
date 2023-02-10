@@ -24,7 +24,7 @@ def index(request):
     else:
         form = TodoForm()
     todos = Todo.objects.all()
-    context = {'form': form, 'todos': todos}
+    context = {'form': form, 'todos': todos, 'PRIORITY_CHOICES': Todo.PRIORITY_CHOICES}
     return render(request, 'todos/index.html', context)
 
 def delete_todo(request, pk):
@@ -79,3 +79,12 @@ def change_todo_order(request, todo_id, direction):
             todo.save()
             todo_swap.save()
     return redirect('todos:index')
+
+def filter_by_priority(request):
+    selected_priority = request.GET.get('priority')
+    if selected_priority:
+        todos = Todo.objects.filter(priority=selected_priority)
+    else:
+        todos = Todo.objects.all()
+    context = {'todos': todos, 'selected_priority': selected_priority, 'PRIORITY_CHOICES': Todo.PRIORITY_CHOICES}
+    return render(request, 'todos/index.html', context)

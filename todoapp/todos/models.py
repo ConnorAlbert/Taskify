@@ -17,3 +17,4 @@ class Todo(models.Model):
 
     class Meta:
         ordering = ['order']
+
