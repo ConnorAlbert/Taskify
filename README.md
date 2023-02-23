@@ -156,6 +156,6 @@ Project Link: https://my-to-do-app.herokuapp.com/
 [issues-url]: https://github.com/ConnorAlbert/To-do/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/connoralbert/
-
+ 
 
 
