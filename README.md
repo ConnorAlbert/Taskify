@@ -116,7 +116,7 @@ Task Management Options: A set of tools that allows you to edit a task's name an
 * [x] Filter
 * [x] Order
 
-See the [open issues](https://github.com/ConnorAlbert/CycleFrontier/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/ConnorAlbert/To-do/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
