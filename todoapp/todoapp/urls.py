@@ -4,5 +4,5 @@ from todos.views import index
 
 urlpatterns = [
     path('', index, name='index'),
-    path('taskifys/', include('taskifys.urls', namespace="taskifys")),
+    path('todos/', include('todos.urls', namespace="todos")),
 ]
