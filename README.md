@@ -24,7 +24,7 @@
     <a href="https://github.com/ConnorAlbert/Taskify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://my-Taskify-app.herokuapp.com/">View Demo</a>
+    <a href="https://taskify-app-connor.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/ConnorAlbert/Taskify/issues">Report Bug</a>
     ·
@@ -144,7 +144,7 @@ Don't forget to give the project a star! Thanks again!
 
 Connor Albert - connoralbert23@hotmail.com
 
-Project Link: https://my-Taskify-app.herokuapp.com/
+Project Link: https://taskify-app-connor.herokuapp.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
