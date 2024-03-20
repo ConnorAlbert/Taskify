@@ -144,7 +144,7 @@ Don't forget to give the project a star! Thanks again!
 
 Connor Albert - connoralbert23@hotmail.com
 
-Project Link: https://my-Taskify-app.herokuapp.com/
+Project Link: https://taskify-app-connor-014b178bbaab.herokuapp.com
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
