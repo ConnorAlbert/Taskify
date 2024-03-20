@@ -10,25 +10,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ConnorAlbert/To-do">
+  <a href="https://github.com/ConnorAlbert/Taskify">
    
   </a>
 
-<h1 align="center">To-do</h1>
+<h1 align="center">Taskify</h1>
 
   <p align="center">
-    Developed a To-Do List web application using Django web framework that allows users to
+    Developed a Taskify List web application using Django web framework that allows users to
     efficiently manage their tasks by performing basic CRUD operations (Create, Read, Update,
     Delete) and assigning a priority level to each task.
     <br />
-    <a href="https://github.com/ConnorAlbert/To-do"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ConnorAlbert/Taskify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://my-to-do-app.herokuapp.com/">View Demo</a>
+    <a href="https://my-Taskify-app.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/ConnorAlbert/To-do/issues">Report Bug</a>
+    <a href="https://github.com/ConnorAlbert/Taskify/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ConnorAlbert/To-do/issues">Request Feature</a>
+    <a href="https://github.com/ConnorAlbert/Taskify/issues">Request Feature</a>
   </p>
 </div>
 
@@ -56,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Todo](https://user-images.githubusercontent.com/92011318/220824767-2417bddc-f100-4e10-b27d-f054c17e58ac.png)
+![Taskify](https://user-images.githubusercontent.com/92011318/220824767-2417bddc-f100-4e10-b27d-f054c17e58ac.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -116,7 +116,7 @@ Task Management Options: A set of tools that allows you to edit a task's name an
 * [x] Filter
 * [x] Order
 
-See the [open issues](https://github.com/ConnorAlbert/To-do/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/ConnorAlbert/Taskify/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -144,16 +144,16 @@ Don't forget to give the project a star! Thanks again!
 
 Connor Albert - connoralbert23@hotmail.com
 
-Project Link: https://my-to-do-app.herokuapp.com/
+Project Link: https://my-Taskify-app.herokuapp.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ConnorAlbert/To-do?style=for-the-badge
-[contributors-url]: https://github.com/ConnorAlbert/To-do/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/ConnorAlbert/To-do?style=for-the-badge
-[issues-url]: https://github.com/ConnorAlbert/To-do/issues
+[contributors-shield]: https://img.shields.io/github/contributors/ConnorAlbert/Taskify?style=for-the-badge
+[contributors-url]: https://github.com/ConnorAlbert/Taskify/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/ConnorAlbert/Taskify?style=for-the-badge
+[issues-url]: https://github.com/ConnorAlbert/Taskify/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/connoralbert/
  
