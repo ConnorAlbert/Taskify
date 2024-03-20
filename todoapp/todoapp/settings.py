@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o8zd7e9awoskwgzki#^#fq2%y!^x8w(m$2tp_=7+_$e4z7k630
 # SECURITY WARNING: don't ru00n with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['taskify-app-connor.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['taskify-app-connor-014b178bbaab.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
