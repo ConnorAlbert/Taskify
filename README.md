@@ -17,7 +17,7 @@
 <h1 align="center">Taskify</h1>
 
   <p align="center">
-    Developed a Taskify web application using Django web framework that allows users to
+    Developed a web application Taskify using Django web framework that allows users to
     efficiently manage their tasks by performing basic CRUD operations (Create, Read, Update,
     Delete) and assigning a priority level to each task.
     <br />
