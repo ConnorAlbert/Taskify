@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <title>Todo App</title>
+  <title>Taskify</title>
   <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-3">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
       <span class="font-semibold text-xl tracking-tight pr-44">To-do App</span>
@@ -22,13 +22,13 @@
     <div class="w-full block flex-grow lg:flex lg:w-auto">
       <div class="text-sm mr-4">
         <div class="flex items-center w-full">
-          <form action="{% url 'todos:index' %}" method="post">
+          <form action="{% url 'taskifys:index' %}" method="post">
             {% csrf_token %}
             {{ form.task }}
             {{ form.priority }}
             <input type="submit" value="Add Task" class="bg-blue-500 text-white p-2 rounded border-1 text-sm border-white  hover:text-white-700 hover:bg-blue-700 mt-4 lg:mt-0 ml-4">
           </form>
-          <form method="get" action="{% url 'todos:filter_by_priority' %}" class="ml-4">
+          <form method="get" action="{% url 'taskifys:filter_by_priority' %}" class="ml-4">
             <select name="priority" id="priority">
               <option value="">All</option>
               {% for priority, display in PRIORITY_CHOICES %}
@@ -83,29 +83,29 @@
         </tr>
       </thead>
       <tbody>
-        {% for todo in todos %}
-        <tr class="{% cycle 'bg-white' 'bg-gray-100' %} {%if todo.completed %}bg-green-100{% endif %}">
+        {% for taskify in taskifys %}
+        <tr class="{% cycle 'bg-white' 'bg-gray-100' %} {%if taskify.completed %}bg-green-100{% endif %}">
           <td class="border px-4"><div class="flex flex-col w-min">
-            <a href="{% url 'todos:change_todo_order' todo.id 'up' %}" class=" text-black font-bold py-2 px-3 rounded">
+            <a href="{% url 'taskifys:change_taskify_order' taskify.id 'up' %}" class=" text-black font-bold py-2 px-3 rounded">
               ↑
             </a>
-            <a href="{% url 'todos:change_todo_order' todo.id 'down' %}" class="text-black font-bold py-2 px-3 rounded">
+            <a href="{% url 'taskifys:change_taskify_order' taskify.id 'down' %}" class="text-black font-bold py-2 px-3 rounded">
               ↓
             </a>
           </div></td>
-          <td class="border px-4 py-2 w-5/12 {%if todo.completed %}text-decoration: line-through{% endif %}">{{ todo.task }}</td>
-          <td class="border px-4 py-2 w-2/12 text-center priority-{{ todo.priority }} {% if todo.completed %}completed{% endif %}">{{ todo.priority }}</td>
+          <td class="border px-4 py-2 w-5/12 {%if taskify.completed %}text-decoration: line-through{% endif %}">{{ taskify.task }}</td>
+          <td class="border px-4 py-2 w-2/12 text-center priority-{{ taskify.priority }} {% if taskify.completed %}completed{% endif %}">{{ taskify.priority }}</td>
           <td class="border px-4 text-center">
-            <input type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" {% if todo.completed %}checked{% endif %}
-              onclick="window.location='{% url 'todos:toggle_todo' todo.id %}'">
+            <input type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" {% if taskify.completed %}checked{% endif %}
+              onclick="window.location='{% url 'taskifys:toggle_taskify' taskify.id %}'">
           </td>
           <td class="border px-4 pt-3 pb-3 py-2  text-center">
-            <a href="{% url 'todos:update_todo' todo.id %}"
+            <a href="{% url 'taskifys:update_taskify' taskify.id %}"
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
              Edit
             </a>
             <span class="px-1"></span>
-            <a href="{% url 'todos:delete_todo' todo.id %}"
+            <a href="{% url 'taskifys:delete_taskify' taskify.id %}"
             class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
              Delete
             </a>

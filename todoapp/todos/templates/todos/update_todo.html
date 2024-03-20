@@ -20,12 +20,12 @@
       {% csrf_token %}
       <div class="mb-4 w-6/12 mx-auto">
         <label class="block text-gray-700 font-medium mb-2">Update Task</label>
-        <input type="text" name="task" value="{{ todo.task }}" class="border border-gray-400 p-2 w-full">
+        <input type="text" name="task" value="{{ taskify.task }}" class="border border-gray-400 p-2 w-full">
         <label class="block text-gray-700 font-medium mb-2">Priority</label>
         <select name="priority" class="border border-gray-400 p-2 pr-0 w-4/12">
-          <option value="Low" {% if todo.priority == 'Low' %} selected {% endif %}>Low</option>
-          <option value="Medium" {% if todo.priority == 'Medium' %} selected {% endif %}>Medium</option>
-          <option value="High" {% if todo.priority == 'High' %} selected {% endif %}>High</option>
+          <option value="Low" {% if taskify.priority == 'Low' %} selected {% endif %}>Low</option>
+          <option value="Medium" {% if taskify.priority == 'Medium' %} selected {% endif %}>Medium</option>
+          <option value="High" {% if taskify.priority == 'High' %} selected {% endif %}>High</option>
         </select </div> <div class="mb-4 w-2/12 mx-auto">
 
 
@@ -33,7 +33,7 @@
       <div class="mb-4 text-center">
         <input type="submit" value="Update"
           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-        <a href="{% url 'todos:index' %}"
+        <a href="{% url 'taskifys:index' %}"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back</a>
       </div>
     </form>
