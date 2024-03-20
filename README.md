@@ -17,14 +17,14 @@
 <h1 align="center">Taskify</h1>
 
   <p align="center">
-    Developed a web application Taskify using Django web framework that allows users to
+    Developed a Taskify List web application using Django web framework that allows users to
     efficiently manage their tasks by performing basic CRUD operations (Create, Read, Update,
     Delete) and assigning a priority level to each task.
     <br />
     <a href="https://github.com/ConnorAlbert/Taskify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://taskify-app-connor.herokuapp.com/">View Demo</a>
+    <a href="https://my-Taskify-app.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/ConnorAlbert/Taskify/issues">Report Bug</a>
     ·
@@ -144,7 +144,7 @@ Don't forget to give the project a star! Thanks again!
 
 Connor Albert - connoralbert23@hotmail.com
 
-Project Link: https://taskify-app-connor.herokuapp.com/
+Project Link: https://my-Taskify-app.herokuapp.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
