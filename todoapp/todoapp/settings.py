@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-o8zd7e9awoskwgzki#^#fq2%y!^x8w(m$2tp_=7+_$e4z7k630'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't ru00n with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['my-to-do-app.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['taskify-app-connor.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

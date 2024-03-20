@@ -10,4 +10,4 @@ urlpatterns = [
     path('toggle/todo/<int:todo_id>/', views.toggle_todo, name='toggle_todo'),
     path('change_todo_order/<int:todo_id>/<str:direction>/', views.change_todo_order, name='change_todo_order'),
     path('filter_by_priority/', views.filter_by_priority, name='filter_by_priority'),
-]
+]0
